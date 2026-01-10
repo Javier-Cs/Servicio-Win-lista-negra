@@ -1,5 +1,6 @@
 using WorkerService1.Data;
 using WorkerService1.Repositorio;
+using WorkerService1.Servicio;
 
 namespace WorkerService1
 {
@@ -13,6 +14,7 @@ namespace WorkerService1
             // inyeccion de dependencias 
             builder.Services.AddSingleton<ISqlConnectFactory, SqlConnectFactory>();
             builder.Services.AddScoped<CredencialesRepository>();
+            builder.Services.AddSingleton<IEmailCleaner>();
 
             var host = builder.Build();
             host.Run();
