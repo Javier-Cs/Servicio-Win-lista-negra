@@ -2,7 +2,7 @@
 
 namespace WorkerService1.Data
 {
-    internal interface ISqlConnectFactory
+    public interface ISqlConnectFactory
     {
         IDbConnection CreateConnection();
     }

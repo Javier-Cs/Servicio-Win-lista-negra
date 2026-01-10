@@ -1,3 +1,6 @@
+using WorkerService1.Data;
+using WorkerService1.Repositorio;
+
 namespace WorkerService1
 {
     public class Program
@@ -6,6 +9,10 @@ namespace WorkerService1
         {
             var builder = Host.CreateApplicationBuilder(args);
             builder.Services.AddHostedService<Worker>();
+
+            // inyeccion de dependencias 
+            builder.Services.AddSingleton<ISqlConnectFactory, SqlConnectFactory>();
+            builder.Services.AddScoped<CredencialesRepository>();
 
             var host = builder.Build();
             host.Run();

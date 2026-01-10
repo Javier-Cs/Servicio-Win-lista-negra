@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WorkerService1.Data
 {
-    internal class SqlConnectFactory : ISqlConnectFactory
+    public class SqlConnectFactory : ISqlConnectFactory
     {
         private readonly string _sqlconnect;
 
